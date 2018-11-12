@@ -120,28 +120,34 @@ def linear_activation_forward(A_prev, W, b, activation):
     return A, cache
 
 
+# if __name__ == '__main__':
+#     L = [1, 11, 12]
+#     # print( range(len(L)))
+#     for i in range(len(L)):
+#         print(str(i) + ':' + str(L[i]))
+
 if __name__ == '__main__':
     X, params = L_model_forward_test_case_2hidden()
     print(X)
-    print (params)
+    print(params)
 
-    print (len(params) // 2)
+    print(len(params) // 2)
 
     caches = dict()
     A = X
     L = len(params) // 2
 
     for l in range(1, L):
-        print ("calculation layer " + str(l))
+        print("calculation layer " + str(l))
         A_prev = A
 
         W_l = params["W" + str(l)]
         b_l = params["b" + str(l)]
         A, cache = linear_activation_forward(A_prev, W_l, b_l, activation="relu")
 
-        print (A)
+        print(A)
 
-        caches[str(l)] = (cache)
+        caches[str(l)] = cache
 
     # Output layer
 
