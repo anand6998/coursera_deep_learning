@@ -1,17 +1,21 @@
 import numpy as np
 
+
 def init_params():
-    parameters = {'W1': np.array([[ 0.35480861,  1.81259031, -1.3564758 , -0.46363197,  0.82465384],
-           [-1.17643148,  1.56448966,  0.71270509, -0.1810066 ,  0.53419953],
-           [-0.58661296, -1.48185327,  0.85724762,  0.94309899,  0.11444143],
-           [-0.02195668, -2.12714455, -0.83440747, -0.46550831,  0.23371059]]), 'b1': np.array([[ 1.38503523],
-           [-0.51962709],
-           [-0.78015214],
-           [ 0.95560959]]), 'W2': np.array([[-0.12673638, -1.36861282,  1.21848065, -0.85750144],
-           [-0.56147088, -1.0335199 ,  0.35877096,  1.07368134],
-           [-0.37550472,  0.39636757, -0.47144628,  2.33660781]]), 'b2': np.array([[ 1.50278553],
-           [-0.59545972],
-           [ 0.52834106]]), 'W3': np.array([[ 0.9398248 ,  0.42628539, -0.75815703]]), 'b3': np.array([[-0.16236698]])}
+    parameters = {'W1': np.array([[0.35480861, 1.81259031, -1.3564758, -0.46363197, 0.82465384],
+                                  [-1.17643148, 1.56448966, 0.71270509, -0.1810066, 0.53419953],
+                                  [-0.58661296, -1.48185327, 0.85724762, 0.94309899, 0.11444143],
+                                  [-0.02195668, -2.12714455, -0.83440747, -0.46550831, 0.23371059]]),
+                  'b1': np.array([[1.38503523],
+                                  [-0.51962709],
+                                  [-0.78015214],
+                                  [0.95560959]]), 'W2': np.array([[-0.12673638, -1.36861282, 1.21848065, -0.85750144],
+                                                                  [-0.56147088, -1.0335199, 0.35877096, 1.07368134],
+                                                                  [-0.37550472, 0.39636757, -0.47144628, 2.33660781]]),
+                  'b2': np.array([[1.50278553],
+                                  [-0.59545972],
+                                  [0.52834106]]), 'W3': np.array([[0.9398248, 0.42628539, -0.75815703]]),
+                  'b3': np.array([[-0.16236698]])}
 
     return parameters
 
@@ -37,18 +41,19 @@ def L_model_forward_test_case_2hidden():
 
 
 def sigmoid(Z):
-
-    A =  1. / (1 + np.exp(-Z))
+    A = 1. / (1 + np.exp(-Z))
     cache = dict()
     cache["Z"] = Z
 
     return A, cache
+
 
 def relu(Z):
     A = np.maximum(0, Z)
     cache = dict()
     cache["Z"] = Z
     return A, cache
+
 
 def linear_forward(A, W, b):
     """
@@ -66,7 +71,7 @@ def linear_forward(A, W, b):
 
     ### START CODE HERE ### (≈ 1 line of code)
     Z = np.dot(W, A) + b
-    #cache = (A, W, b)
+    # cache = (A, W, b)
     cache = dict()
     cache["A"] = A
     cache["W"] = W
@@ -76,6 +81,7 @@ def linear_forward(A, W, b):
     assert (Z.shape == (W.shape[0], A.shape[1]))
 
     return Z, cache
+
 
 # GRADED FUNCTION: linear_activation_forward
 
@@ -113,6 +119,7 @@ def linear_activation_forward(A_prev, W, b, activation):
     cache = (linear_cache, activation_cache)
     return A, cache
 
+
 if __name__ == '__main__':
     X, params = L_model_forward_test_case_2hidden()
     print(X)
@@ -128,7 +135,6 @@ if __name__ == '__main__':
         print ("calculation layer " + str(l))
         A_prev = A
 
-
         W_l = params["W" + str(l)]
         b_l = params["b" + str(l)]
         A, cache = linear_activation_forward(A_prev, W_l, b_l, activation="relu")
@@ -137,12 +143,11 @@ if __name__ == '__main__':
 
         caches[str(l)] = (cache)
 
-    #Output layer
+    # Output layer
 
-    l+= 1
+    l += 1
     W_l = params["W" + str(l)]
     b_l = params["b" + str(l)]
-
 
     print(W_l)
     print(b_l)
@@ -151,9 +156,8 @@ if __name__ == '__main__':
 
     print(AL)
 
-    caches[str(l)]  = cache
+    caches[str(l)] = cache
     print(caches)
-
 
 '''
 Layer sizes
