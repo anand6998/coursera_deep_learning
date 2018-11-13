@@ -50,10 +50,10 @@ def L_model_forward_test_case():
     b1 = np.random.randn(3, 1)
     W2 = np.random.randn(1, 3)
     b2 = np.random.randn(1, 1)
-    parameters = {"W1": W1,
-                  "b1": b1,
-                  "W2": W2,
-                  "b2": b2}
+    parameters = {'W1': W1,
+                  'b1': b1,
+                  'W2': W2,
+                  'b2': b2}
 
     return X, parameters
 
@@ -76,7 +76,10 @@ def linear_backward_test_case():
     A = np.random.randn(3, 2)
     W = np.random.randn(1, 3)
     b = np.random.randn(1, 1)
-    linear_cache = (A, W, b)
+    linear_cache = {'A': A,
+                    'W': W,
+                    'b': b,
+                    }
     return dZ, linear_cache
 
 
@@ -90,11 +93,13 @@ def linear_activation_backward_test_case():
     W = np.random.randn(1, 3)
     b = np.random.randn(1, 1)
     Z = np.random.randn(1, 2)
-    linear_cache = (A, W, b)
-    activation_cache = Z
-    linear_activation_cache = (linear_cache, activation_cache)
-
-    return dA, linear_activation_cache
+    cache = {
+        'A': A,
+         'W': W,
+         'b': b,
+         'Z': Z}
+    
+    return dA, cache
 
 
 def L_model_backward_test_case():
@@ -103,7 +108,9 @@ def L_model_backward_test_case():
     Y = np.array([[1, 1]])
     parameters = {'W1': np.array([[ 1.78862847,  0.43650985,  0.09649747]]), 'b1': np.array([[ 0.]])}
 
-    aL, caches = (np.array([[ 0.60298372,  0.87182628]]), [((np.array([[ 0.20445225,  0.87811744],
+    aL, caches = (np.array([[ 0.60298372,  0.87182628]]),
+    [((np.array(
+    [[ 0.20445225,  0.87811744],
            [ 0.02738759,  0.67046751],
            [ 0.4173048 ,  0.55868983]]),
     np.array([[ 1.78862847,  0.43650985,  0.09649747]]),
@@ -118,15 +125,68 @@ def L_model_backward_test_case():
     W1 = np.random.randn(3, 4)
     b1 = np.random.randn(3, 1)
     Z1 = np.random.randn(3, 2)
-    linear_cache_activation_1 = ((A1, W1, b1), Z1)
+    linear_cache_activation_1 = {'A': A1,
+                                 'W': W1,
+                                 'b': b1,
+                                 'Z': Z1}
 
     A2 = np.random.randn(3, 2)
     W2 = np.random.randn(1, 3)
     b2 = np.random.randn(1, 1)
     Z2 = np.random.randn(1, 2)
-    linear_cache_activation_2 = ((A2, W2, b2), Z2)
+    linear_cache_activation_2 = {'A': A2,
+                                 'W': W2,
+                                 'b': b2,
+                                 'Z': Z2}
 
-    caches = (linear_cache_activation_1, linear_cache_activation_2)
+    caches = dict()
+    caches['2'] = linear_cache_activation_2
+    caches['1'] = linear_cache_activation_1
+
+    return AL, Y, caches
+
+
+def L_model_backward_test_case_2():
+    """
+    X = np.random.rand(3,2)
+    Y = np.array([[1, 1]])
+    parameters = {'W1': np.array([[ 1.78862847,  0.43650985,  0.09649747]]), 'b1': np.array([[ 0.]])}
+
+    aL, caches = (np.array([[ 0.60298372,  0.87182628]]),
+    [((np.array(
+    [[ 0.20445225,  0.87811744],
+           [ 0.02738759,  0.67046751],
+           [ 0.4173048 ,  0.55868983]]),
+    np.array([[ 1.78862847,  0.43650985,  0.09649747]]),
+    np.array([[ 0.]])),
+   np.array([[ 0.41791293,  1.91720367]]))])
+   """
+    np.random.seed(3)
+    AL = np.random.randn(1, 2)
+    Y = np.array([[1, 0]])
+
+    A1 = np.random.randn(4, 2)
+    W1 = np.random.randn(3, 4)
+    b1 = np.random.randn(3, 1)
+    Z1 = np.random.randn(3, 2)
+    linear_cache_activation_1 = {'A': A1,
+                                 'W': W1,
+                                 'b': b1,
+                                 'Z': Z1}
+
+    A2 = np.random.randn(3, 2)
+    W2 = np.random.randn(1, 3)
+    b2 = np.random.randn(1, 1)
+    Z2 = np.random.randn(1, 2)
+    linear_cache_activation_2 = {'A': A2,
+                                 'W': W2,
+                                 'b': b2,
+                                 'Z': Z2}
+
+    caches = dict()
+    caches['2'] = linear_cache_activation_2
+    caches['1'] = linear_cache_activation_1
+    # caches = (linear_cache_activation_1, linear_cache_activation_2)
 
     return AL, Y, caches
 
@@ -178,19 +238,19 @@ def update_parameters_test_case():
     b1 = np.random.randn(3, 1)
     W2 = np.random.randn(1, 3)
     b2 = np.random.randn(1, 1)
-    parameters = {"W1": W1,
-                  "b1": b1,
-                  "W2": W2,
-                  "b2": b2}
+    parameters = {'W1': W1,
+                  'b1': b1,
+                  'W2': W2,
+                  'b2': b2}
     np.random.seed(3)
     dW1 = np.random.randn(3, 4)
     db1 = np.random.randn(3, 1)
     dW2 = np.random.randn(1, 3)
     db2 = np.random.randn(1, 1)
-    grads = {"dW1": dW1,
-             "db1": db1,
-             "dW2": dW2,
-             "db2": db2}
+    grads = {'dW1': dW1,
+             'db1': db1,
+             'dW2': dW2,
+             'db2': db2}
 
     return parameters, grads
 
@@ -205,18 +265,17 @@ def L_model_forward_test_case_2hidden():
     W3 = np.random.randn(1, 3)
     b3 = np.random.randn(1, 1)
 
-    parameters = {"W1": W1,
-                  "b1": b1,
-                  "W2": W2,
-                  "b2": b2,
-                  "W3": W3,
-                  "b3": b3}
+    parameters = {'W1': W1,
+                  'b1': b1,
+                  'W2': W2,
+                  'b2': b2,
+                  'W3': W3,
+                  'b3': b3}
 
     return X, parameters
 
 
 def print_grads(grads):
-    print("dW1 = " + str(grads["dW1"]))
-    print("db1 = " + str(grads["db1"]))
-    print("dA1 = " + str(grads["dA1"]))
-
+    print('dW1 = ' + str(grads['dW1']))
+    print('db1 = ' + str(grads['db1']))
+    print('dA1 = ' + str(grads['dA1']))

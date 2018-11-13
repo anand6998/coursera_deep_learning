@@ -1,58 +1,93 @@
 import numpy as np
+from dnn_utils_v3 import relu, sigmoid, relu_backward, sigmoid_backward
 
+def initialize_parameters(n_x, n_h, n_y):
+    """
+    Argument:
+    n_x -- size of the input layer
+    n_h -- size of the hidden layer
+    n_y -- size of the output layer
 
-def init_params():
-    parameters = {'W1': np.array([[0.35480861, 1.81259031, -1.3564758, -0.46363197, 0.82465384],
-                                  [-1.17643148, 1.56448966, 0.71270509, -0.1810066, 0.53419953],
-                                  [-0.58661296, -1.48185327, 0.85724762, 0.94309899, 0.11444143],
-                                  [-0.02195668, -2.12714455, -0.83440747, -0.46550831, 0.23371059]]),
-                  'b1': np.array([[1.38503523],
-                                  [-0.51962709],
-                                  [-0.78015214],
-                                  [0.95560959]]), 'W2': np.array([[-0.12673638, -1.36861282, 1.21848065, -0.85750144],
-                                                                  [-0.56147088, -1.0335199, 0.35877096, 1.07368134],
-                                                                  [-0.37550472, 0.39636757, -0.47144628, 2.33660781]]),
-                  'b2': np.array([[1.50278553],
-                                  [-0.59545972],
-                                  [0.52834106]]), 'W3': np.array([[0.9398248, 0.42628539, -0.75815703]]),
-                  'b3': np.array([[-0.16236698]])}
+    Returns:
+    parameters -- python dictionary containing your parameters:
+                    W1 -- weight matrix of shape (n_h, n_x)
+                    b1 -- bias vector of shape (n_h, 1)
+                    W2 -- weight matrix of shape (n_y, n_h)
+                    b2 -- bias vector of shape (n_y, 1)
+    """
 
-    return parameters
+    np.random.seed(1)
 
+    # START CODE HERE ### (≈ 4 lines of code)
+    W1 = np.random.randn(n_h, n_x) * 0.01
+    b1 = np.zeros(shape=(n_h, 1))
+    W2 = np.random.randn(n_y, n_h) * 0.01
+    b2 = np.zeros(shape=(n_y, 1))
+    # END CODE HERE ###
 
-def L_model_forward_test_case_2hidden():
-    np.random.seed(6)
-    X = np.random.randn(5, 4)
-    W1 = np.random.randn(4, 5)
-    b1 = np.random.randn(4, 1)
-    W2 = np.random.randn(3, 4)
-    b2 = np.random.randn(3, 1)
-    W3 = np.random.randn(1, 3)
-    b3 = np.random.randn(1, 1)
+    assert (W1.shape == (n_h, n_x))
+    assert (b1.shape == (n_h, 1))
+    assert (W2.shape == (n_y, n_h))
+    assert (b2.shape == (n_y, 1))
 
     parameters = {"W1": W1,
                   "b1": b1,
                   "W2": W2,
-                  "b2": b2,
-                  "W3": W3,
-                  "b3": b3}
+                  "b2": b2}
 
-    return X, parameters
+    return parameters
 
 
-def sigmoid(Z):
-    A = 1. / (1 + np.exp(-Z))
-    cache = dict()
-    cache["Z"] = Z
+def initialize_parameters_deep(layer_dims):
+    """
+    Arguments:
+    layer_dims -- python array (list) containing the dimensions of each layer in our network
 
-    return A, cache
+    Returns:
+    parameters -- python dictionary containing your parameters "W1", "b1", ..., "WL", "bL":
+                    Wl -- weight matrix of shape (layer_dims[l], layer_dims[l-1])
+                    bl -- bias vector of shape (layer_dims[l], 1)
+    """
+
+    np.random.seed(3)
+    parameters = {}
+    L = len(layer_dims)  # number of layers in the network
+
+    for l in range(1, L):
+        # START CODE HERE ### (≈ 2 lines of code)
+        parameters['W' + str(l)] = np.random.randn(layer_dims[l], layer_dims[l - 1]) * 0.01
+        parameters['b' + str(l)] = np.zeros(shape=(layer_dims[l], 1))
+        # END CODE HERE ###
+
+        assert (parameters['W' + str(l)].shape == (layer_dims[l], layer_dims[l - 1]))
+        assert (parameters['b' + str(l)].shape == (layer_dims[l], 1))
+
+    return parameters
 
 
-def relu(Z):
-    A = np.maximum(0, Z)
-    cache = dict()
-    cache["Z"] = Z
-    return A, cache
+def compute_cost(AL, Y):
+    """
+    Implement the cost function defined by equation (7).
+
+    Arguments:
+    AL -- probability vector corresponding to your label predictions, shape (1, number of examples)
+    Y -- true "label" vector (for example: containing 0 if non-cat, 1 if cat), shape (1, number of examples)
+
+    Returns:
+    cost -- cross-entropy cost
+    """
+
+    m = Y.shape[1]
+
+    # Compute loss from aL and y.
+    # START CODE HERE ### (≈ 1 lines of code)
+    cost = (-1. / m) * np.sum(np.multiply(Y, np.log(AL)) + np.multiply((1 - Y), np.log(1 - AL)))
+    # END CODE HERE ###
+
+    cost = np.squeeze(cost)  # To make sure your cost's shape is what we expect (e.g. this turns [[17]] into 17).
+    assert (cost.shape == ())
+
+    return cost
 
 
 def linear_forward(A, W, b):
@@ -69,21 +104,19 @@ def linear_forward(A, W, b):
     cache -- a python dictionary containing "A", "W" and "b" ; stored for computing the backward pass efficiently
     """
 
-    ### START CODE HERE ### (≈ 1 line of code)
+    # START CODE HERE ### (≈ 1 line of code)
     Z = np.dot(W, A) + b
     # cache = (A, W, b)
     cache = dict()
-    cache["A"] = A
-    cache["W"] = W
-    cache["b"] = b
-    ### END CODE HERE ###
+    cache['A'] = A
+    cache['W'] = W
+    cache['b'] = b
+    # END CODE HERE ###
 
     assert (Z.shape == (W.shape[0], A.shape[1]))
 
     return Z, cache
 
-
-# GRADED FUNCTION: linear_activation_forward
 
 def linear_activation_forward(A_prev, W, b, activation):
     """
@@ -103,81 +136,134 @@ def linear_activation_forward(A_prev, W, b, activation):
 
     if activation == "sigmoid":
         # Inputs: "A_prev, W, b". Outputs: "A, activation_cache".
-        ### START CODE HERE ### (≈ 2 lines of code)
+        # START CODE HERE ### (≈ 2 lines of code)
         Z, linear_cache = linear_forward(A_prev, W, b)
         A, activation_cache = sigmoid(Z)
-        ### END CODE HERE ###
+        # END CODE HERE ###
 
     elif activation == "relu":
         # Inputs: "A_prev, W, b". Outputs: "A, activation_cache".
-        ### START CODE HERE ### (≈ 2 lines of code)
+        # START CODE HERE ### (≈ 2 lines of code)
         Z, linear_cache = linear_forward(A_prev, W, b)
         A, activation_cache = relu(Z)
-        ### END CODE HERE ###
+        # END CODE HERE ###
 
     assert (A.shape == (W.shape[0], A_prev.shape[1]))
-    cache = (linear_cache, activation_cache)
+    cache = dict()
+    cache.update(linear_cache)
+    cache.update(activation_cache)
+    # cache = {"linear": linear_cache, "activation": activation_cache}
     return A, cache
 
 
-# if __name__ == '__main__':
-#     L = [1, 11, 12]
-#     # print( range(len(L)))
-#     for i in range(len(L)):
-#         print(str(i) + ':' + str(L[i]))
+def L_model_forward(X, parameters):
+    """
+    Implement forward propagation for the [LINEAR->RELU]*(L-1)->LINEAR->SIGMOID computation
 
-if __name__ == '__main__':
-    X, params = L_model_forward_test_case_2hidden()
-    print(X)
-    print(params)
+    Arguments:
+    X -- data, numpy array of shape (input size, number of examples)
+    parameters -- output of initialize_parameters_deep()
 
-    print(len(params) // 2)
+    Returns:
+    AL -- last post-activation value
+    caches -- list of caches containing:
+                every cache of linear_activation_forward() (there are L-1 of them, indexed from 0 to L-1)
+    """
 
     caches = dict()
     A = X
-    L = len(params) // 2
+    L = len(parameters) // 2  # number of layers in the neural network
 
+    # Implement [LINEAR -> RELU]*(L-1). Add "cache" to the "caches" list.
     for l in range(1, L):
-        print("calculation layer " + str(l))
         A_prev = A
+        # START CODE HERE ### (≈ 2 lines of code)
+        W_l = parameters["W" + str(l)]
+        b_l = parameters["b" + str(l)]
 
-        W_l = params["W" + str(l)]
-        b_l = params["b" + str(l)]
         A, cache = linear_activation_forward(A_prev, W_l, b_l, activation="relu")
-
-        print(A)
-
         caches[str(l)] = cache
+        # END CODE HERE ###
 
-    # Output layer
-
+    # Implement LINEAR -> SIGMOID. Add "cache" to the "caches" list.
+    # START CODE HERE ### (≈ 2 lines of code)
+    # this is the final layer
     l += 1
-    W_l = params["W" + str(l)]
-    b_l = params["b" + str(l)]
-
-    print(W_l)
-    print(b_l)
-    print(A_prev)
+    W_l = parameters["W" + str(l)]
+    b_l = parameters["b" + str(l)]
     AL, cache = linear_activation_forward(A, W_l, b_l, activation="sigmoid")
-
-    print(AL)
-
     caches[str(l)] = cache
-    print(caches)
+    # END CODE HERE ###
 
-'''
-Layer sizes
-input layer     - 5
-layer 1         - 4
-layer 2         - 3
-output layer    - 1
+    assert (AL.shape == (1, X.shape[1]))
 
-W1 (4, 5)
-b1 (4, 1)
+    return AL, caches
 
-W2 (3, 4)
-b2 (3, 1)
 
-W3 (1, 3)
-b3 (1, 1)
-'''
+def linear_backward(dZ, cache):
+    A_prev = cache['A']
+    W = cache['W']
+    b = cache['b']
+
+    m = A_prev.shape[1]
+    dW = (1. / m) * np.dot(dZ, A_prev.T)
+    db = (1. / m) * np.sum(dZ, axis=1, keepdims=True)
+    dA_prev = np.dot(W.T, dZ)
+
+    return dA_prev, dW, db
+
+
+def linear_activation_backward(dA, cache, activation):
+    if activation == 'relu':
+        dZ = relu_backward(dA, cache)
+        dA_prev, dW, db = linear_backward(dZ, cache)
+    elif activation == 'sigmoid':
+        dZ = sigmoid_backward(dA, cache)
+        dA_prev, dW, db = linear_backward(dZ, cache)
+    return dA_prev, dW, db
+
+
+def L_model_backward(AL, Y, caches):
+    grads = {}
+    L = len(caches)
+
+    m = AL.shape[1]
+    Y = Y.reshape(AL.shape)
+
+    dAL = -(np.divide(Y, AL)) + np.divide(1 - Y, 1 - AL)
+    layer_cache = caches[str(L)]
+
+    grads['dA' + str(L - 1)], grads['dW' + str(L)], grads['db' + str(L)] = \
+        linear_activation_backward(dAL, layer_cache, activation="sigmoid")
+
+    for l in reversed(range(L - 1)):
+        layer = str(l + 1)
+        print('Computing layer ' + layer)
+
+        layer_cache = caches[layer]
+        dA_prev_temp, dW_temp, db_temp = \
+            linear_activation_backward(grads['dA' + layer], layer_cache, activation='relu')
+
+        grads["dA" + str(l)] = dA_prev_temp
+        grads["dW" + layer] = dW_temp
+        grads["db" + layer] = db_temp
+
+    return grads
+
+
+def update_parameters(parameters, grads, learning_rate):
+    L = len(parameters) // 2
+    for l in range(L):
+        W = parameters["W" + str(l + 1)]
+        dW = grads["dW" + str(l + 1)]
+
+        b = parameters["b" + str(l + 1)]
+        db = grads["db" + str(l + 1)]
+        parameters["W" + str(l + 1)] = W - learning_rate * dW
+        parameters["b" + str(l + 1)] = b - learning_rate * db
+        # END CODE HERE ###
+    return parameters
+
+
+if __name__ == '__main__':
+    pass
