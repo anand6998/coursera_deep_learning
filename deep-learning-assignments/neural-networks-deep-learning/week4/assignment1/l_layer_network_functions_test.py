@@ -3,10 +3,11 @@ import unittest
 import numpy as np
 
 from l_layer_network import linear_forward, linear_activation_forward, L_model_forward, compute_cost, linear_backward, \
-    linear_activation_backward, L_model_backward
+    linear_activation_backward, L_model_backward, update_parameters
 from testCases_v5 import linear_forward_test_case, linear_activation_forward_test_case, \
     L_model_forward_test_case_2hidden, compute_cost_test_case, linear_backward_test_case, \
-    linear_activation_backward_test_case, L_model_backward_test_case
+    linear_activation_backward_test_case, L_model_backward_test_case, update_parameters_test_case
+import pprint
 
 
 class L_LayerNetworkFunctionsTest(unittest.TestCase):
@@ -144,6 +145,32 @@ class L_LayerNetworkFunctionsTest(unittest.TestCase):
         np.testing.assert_array_almost_equal(dW1_expected, grads['dW1'], decimal=8, verbose=True)
         np.testing.assert_array_almost_equal(db1_expected, grads['db1'], decimal=8, verbose=True)
         np.testing.assert_array_almost_equal(dA1_expected, grads['dA1'], decimal=8, verbose=True)
+
+    def test_update_parameters(self):
+        parameters, grads = update_parameters_test_case()
+        parameters = update_parameters(parameters, grads, 0.1)
+
+        W1 = parameters["W1"]
+        b1 = parameters["b1"]
+        W2 = parameters["W2"]
+        b2 = parameters["b2"]
+
+        print("W1 = " + pprint.pformat(W1, indent=4))
+        print("b1 = " + pprint.pformat(b1, indent=4))
+        print("W2 = " + pprint.pformat(W2, indent=4))
+        print("b2 = " + pprint.pformat(b2, indent=4))
+
+        W1_expected = np.array([[-0.59562069, -0.09991781, -2.14584584, 1.82662008],
+                                [-1.76569676, -0.80627147, 0.51115557, -1.18258802],
+                                [-1.0535704, -0.86128581, 0.68284052, 2.20374577]])
+        b1_expected = np.array([[-0.04659241], [-1.28888275], [0.53405496]])
+        W2_expected = np.array([[-0.55569196, 0.0354055, 1.32964895]])
+        b2_expected = np.array([[-0.84610769]])
+
+        np.testing.assert_array_almost_equal(W1_expected, W1, decimal=8, verbose=True)
+        np.testing.assert_array_almost_equal(b1_expected, b1, decimal=8, verbose=True)
+        np.testing.assert_array_almost_equal(W2_expected, W2, decimal=8, verbose=True)
+        np.testing.assert_array_almost_equal(b2_expected, b2, decimal=8, verbose=True)
 
 
 if __name__ == '__main__':
