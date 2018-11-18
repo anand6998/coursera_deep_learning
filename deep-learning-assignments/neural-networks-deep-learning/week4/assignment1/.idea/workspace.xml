@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d000b050-df4c-4032-b52e-094cef06215b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Building your Deep Neural Network - Step by Step v5.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Building your Deep Neural Network - Step by Step v5.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Building your Deep Neural Network - Step by Step v6.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Building your Deep Neural Network - Step by Step v6.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Building your Deep Neural Network - Step by Step v7.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Building your Deep Neural Network - Step by Step v7.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Building your Deep Neural Network - Step by Step v5.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Building your Deep Neural Network - Step by Step v6.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Building your Deep Neural Network - Step by Step v7.ipynb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Building your Deep Neural Network - Step by Step v8.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Building your Deep Neural Network - Step by Step v8.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dnn_utils_v2.py" beforeDir="false" afterPath="$PROJECT_DIR$/dnn_utils_v2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dnn_utils_v3.py" beforeDir="false" afterPath="$PROJECT_DIR$/dnn_utils_v3.py" afterDir="false" />
@@ -63,8 +63,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/l_layer_network.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="232" column="56" lean-forward="true" selection-start-line="232" selection-start-column="56" selection-end-line="232" selection-end-column="56" />
+            <state relative-caret-position="468">
+              <caret line="247" column="37" lean-forward="true" selection-start-line="247" selection-start-column="37" selection-end-line="247" selection-end-column="37" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
                 <marker date="1542073227535" expanded="true" signature="7311:8535" ph="..." />
@@ -167,7 +167,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="266" />
     <option name="width" value="1303" />
     <option name="height" value="969" />
@@ -375,14 +375,14 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="266" y="0" width="1303" height="969" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1176" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.37470356" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.34236452" />
+      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.27281648" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.38076547" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.66035503" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -529,8 +529,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/l_layer_network.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="232" column="56" lean-forward="true" selection-start-line="232" selection-start-column="56" selection-end-line="232" selection-end-column="56" />
+        <state relative-caret-position="468">
+          <caret line="247" column="37" lean-forward="true" selection-start-line="247" selection-start-column="37" selection-end-line="247" selection-end-column="37" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
             <marker date="1542073227535" expanded="true" signature="7311:8535" ph="..." />
