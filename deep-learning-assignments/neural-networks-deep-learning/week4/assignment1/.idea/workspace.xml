@@ -25,47 +25,48 @@
     <session id="-129245805">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="ipynb" value="3" />
-          <entry key="py" value="9" />
+          <entry key="py" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="IPNB" value="3" />
-          <entry key="Python" value="9" />
+          <entry key="Python" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="11" />
-          <entry key="py" value="4492" />
-          <entry key="txt" value="10" />
+          <entry key="py" value="6803" />
+          <entry key="txt" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="10" />
-          <entry key="Python" value="4503" />
+          <entry key="PLAIN_TEXT" value="11" />
+          <entry key="Python" value="6814" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/l_layer_network.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="580">
-              <caret line="252" lean-forward="true" selection-start-line="252" selection-end-line="252" />
+            <state relative-caret-position="577">
+              <caret line="252" selection-start-line="252" selection-end-line="252" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
                 <marker date="1542073227535" expanded="true" signature="7311:8535" ph="..." />
@@ -75,9 +76,46 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grayscale.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="862">
+              <caret line="383" column="22" selection-start-line="383" selection-start-column="22" selection-end-line="383" selection-end-column="22" />
+              <folding>
+                <element signature="e#1#19#0" expanded="true" />
+                <marker date="1544991433819" expanded="true" signature="45:47" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/convolution_model_application.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="706">
+              <caret line="240" column="18" selection-start-line="240" selection-start-column="18" selection-end-line="240" selection-end-column="18" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cnn_utils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2053">
+              <caret line="156" column="22" selection-start-line="156" selection-start-column="22" selection-end-line="156" selection-end-column="22" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/l_layer_network_functions_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2788">
+            <state relative-caret-position="408">
               <caret line="173" selection-start-line="173" selection-end-line="173" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
@@ -147,6 +185,7 @@
     <findStrings>
       <find>compute_cost</find>
       <find>&quot;</find>
+      <find>`</find>
     </findStrings>
     <replaceStrings>
       <replace>'</replace>
@@ -165,20 +204,24 @@
         <option value="$PROJECT_DIR$/l_layer_network.py" />
         <option value="$PROJECT_DIR$/Building your Deep Neural Network - Step by Step v8.ipynb" />
         <option value="$PROJECT_DIR$/l_layer_network_functions_test.py" />
+        <option value="$PROJECT_DIR$/grayscale.py" />
+        <option value="$PROJECT_DIR$/cnn_utils.py" />
+        <option value="$PROJECT_DIR$/convolution_model_application.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-7" />
-    <option name="y" value="-7" />
-    <option name="width" value="869" />
-    <option name="height" value="646" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="331" />
+    <option name="y" value="22" />
+    <option name="width" value="1205" />
+    <option name="height" value="1129" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -190,7 +233,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="RecentsManager">
@@ -210,7 +252,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests for l_layer_network_functions_test.L_LayerNetworkFunctionsTest.test_update_parameters">
+  <component name="RunManager" selected="Python.convolution_model_application">
     <configuration name="assignment1" type="JupiterNotebook" factoryName="Jupyter Notebook">
       <module name="assignment1" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -228,7 +270,7 @@
       <option name="ipnbPort" value="8888" />
       <method v="2" />
     </configuration>
-    <configuration name="l_layer_network" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="convolution_model_application" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="assignment1" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -240,7 +282,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/l_layer_network.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/convolution_model_application.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -249,18 +291,25 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for l_layer_network_functions_test.L_LayerNetworkFunctionsTest" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="grayscale" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="assignment1" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;l_layer_network_functions_test.L_LayerNetworkFunctionsTest&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/grayscale.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
     <configuration name="Unittests for l_layer_network_functions_test.L_LayerNetworkFunctionsTest.test_L_model_backward" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
@@ -307,19 +356,19 @@
     </configuration>
     <list>
       <item itemvalue="Jupyter Notebook.assignment1" />
-      <item itemvalue="Python.l_layer_network" />
-      <item itemvalue="Python tests.Unittests for l_layer_network_functions_test.L_LayerNetworkFunctionsTest" />
       <item itemvalue="Python tests.Unittests in l_layer_network_functions_test.py" />
       <item itemvalue="Python tests.Unittests for l_layer_network_functions_test.L_LayerNetworkFunctionsTest.test_update_parameters" />
       <item itemvalue="Python tests.Unittests for l_layer_network_functions_test.L_LayerNetworkFunctionsTest.test_L_model_backward" />
+      <item itemvalue="Python.grayscale" />
+      <item itemvalue="Python.convolution_model_application" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.convolution_model_application" />
+        <item itemvalue="Python.grayscale" />
         <item itemvalue="Python tests.Unittests for l_layer_network_functions_test.L_LayerNetworkFunctionsTest.test_update_parameters" />
         <item itemvalue="Python tests.Unittests for l_layer_network_functions_test.L_LayerNetworkFunctionsTest.test_L_model_backward" />
         <item itemvalue="Python tests.Unittests in l_layer_network_functions_test.py" />
-        <item itemvalue="Python tests.Unittests for l_layer_network_functions_test.L_LayerNetworkFunctionsTest" />
-        <item itemvalue="Python.l_layer_network" />
       </list>
     </recent_temporary>
   </component>
@@ -377,16 +426,15 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1176" extended-state="7" />
-    <editor active="true" />
+    <frame x="331" y="22" width="1205" height="1129" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19704953" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13967438" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.27281648" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.38076547" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.66035503" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.4009901" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39756367" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -444,10 +492,77 @@
           <line>256</line>
           <option name="timeStamp" value="36" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/grayscale.py</url>
+          <line>193</line>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/grayscale.py</url>
+          <line>205</line>
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/grayscale.py</url>
+          <line>402</line>
+          <option name="timeStamp" value="50" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/grayscale.py</url>
+          <line>406</line>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
+    <expressions id="evaluateCodeFragment">
+      <expression>
+        <expression-string>dA_prev[i, vert_start: vert_end, horiz_start: horiz_end, c]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>dA_prev[2, 1]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>dA_prev[1, 1]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>dA_prev</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>mask[:, :, c]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>np.multiply(mask[:, :, c], da)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>mask</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>da</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>np.multiply(mask[:, :, c], dA[i, vert_start: vert_end, horiz_start: horiz_end, c])</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+    </expressions>
     <expressions id="evaluateExpression">
       <expression>
         <expression-string>AL.shape</expression-string>
@@ -478,30 +593,6 @@
       <provider selected="true" editor-type-id="ipnb-editor">
         <state>
           <selected id="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/l_layer_network.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="252" lean-forward="true" selection-start-line="252" selection-end-line="252" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <marker date="1542073227535" expanded="true" signature="7311:8535" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/l_layer_network_functions_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2788">
-          <caret line="173" selection-start-line="173" selection-end-line="173" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-            <marker date="1542207577593" expanded="true" signature="576:577" ph="..." />
-            <marker date="1542207577593" expanded="true" signature="576:581" ph="..." />
-            <marker date="1542207577593" expanded="true" signature="5315:5324" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -537,6 +628,61 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/l_layer_network.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="577">
+          <caret line="252" selection-start-line="252" selection-end-line="252" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <marker date="1542073227535" expanded="true" signature="7311:8535" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grayscale.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="862">
+          <caret line="383" column="22" selection-start-line="383" selection-start-column="22" selection-end-line="383" selection-end-column="22" />
+          <folding>
+            <element signature="e#1#19#0" expanded="true" />
+            <marker date="1544991433819" expanded="true" signature="45:47" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cnn_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2053">
+          <caret line="156" column="22" selection-start-line="156" selection-start-column="22" selection-end-line="156" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/l_layer_network_functions_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="173" selection-start-line="173" selection-end-line="173" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+            <marker date="1542207577593" expanded="true" signature="576:577" ph="..." />
+            <marker date="1542207577593" expanded="true" signature="576:581" ph="..." />
+            <marker date="1542207577593" expanded="true" signature="5315:5324" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/convolution_model_application.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="706">
+          <caret line="240" column="18" selection-start-line="240" selection-start-column="18" selection-end-line="240" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
